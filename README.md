@@ -4,7 +4,7 @@ There’s no way to do media that maintains aspect ratio, is proportional to the
 
 One edge case to keep in mind is when you want an image to size to its container, but the image is sometimes smaller than its container. In that case, the desired behavior is to have the image be its intrinsic size instead of stretching it.
 ## Proposed Solution
-Add an intrinsic-size attribute: `<img intrinsicsize=”400x300” style=”width: 100%”>`.
+Add an intrinsic-size attribute: `<img intrinsicsize="400x300" style="width: 100%">`.
 
 This attribute tells the browser to ignore the actual intrinsic size of the image and pretend it’s the size specified in the attribute. Specifically, the image would raster at these dimensions and [naturalWidth/naturalHeight](https://html.spec.whatwg.org/multipage/embedded-content.html#dom-img-naturalwidth) on images would return the values specified in this attribute. On video elements, the video would raster at this size and the [videoWidth/videoHeight](https://html.spec.whatwg.org/multipage/media.html#dom-video-videowidth) on the video would return the intrinsicsize values.
 
@@ -24,7 +24,7 @@ This attribute applies on all image element types (including SVG images) and vid
 ## Alternatives Considered
 
 ### aspectratio attribute
-`<img aspectratio=”400x300” style=”width: 100%”>`
+`<img aspectratio="400x300" style="width: 100%">`
 
 * Pro: Simple to understand and implement
 * Con:  Doesn't work for a common use case, where you want to constrain an image to be no bigger than its container, but not stretch it to be larger. That is, you want to set the image's width to min(width of container, intrinsic width of image), and you want to do so before downloading any image data.
@@ -59,14 +59,14 @@ then the width will be correct eventually, but only after the image downloads; u
 
 ### width/height set the intrinsic size, New override attribute
 ```html
-<img width=”400” height=”300” actualwidth=”100%”>
+<img width="400" height="300" actualwidth="100%">
 ```
 
 * Con: Doesn’t work with CSS or would need to also add a CSS property
 * Con: Makes width/height mean something different than it does today. Not really backwards compatible.
 
 ### width/height set the intrinsic size, New override attribute
-`<img intrinsicwidth=”400” intrinsicheight=”300” style=”width: 100%”>`
+`<img intrinsicwidth="400" intrinsicheight="300" style="width: 100%">`
 
 * Pro: Allows you to only override one of width or height from the default of 300x150. Not clear this is really a pro. Is it useful to set only one dimension of the intrinsic size?
 * Con: Requires setting two properties
