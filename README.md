@@ -58,7 +58,9 @@ the width will be 75vw always, which is incorrect. Or if you do
 then the width will be correct eventually, but only after the image downloads; until then the browser doesn't know whether it should be 75vw, or something less.
 
 ### width/height set the intrinsic size, New override attribute
-`<img width=”400” height=”300” actualwidth=”100%”>`
+```html
+<img width=”400” height=”300” actualwidth=”100%”>
+```
 
 * Con: Doesn’t work with CSS or would need to also add a CSS property
 * Con: Makes width/height mean something different than it does today. Not really backwards compatible.
