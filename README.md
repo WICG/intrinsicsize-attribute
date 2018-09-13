@@ -11,7 +11,7 @@ This attribute tells the browser to ignore the actual intrinsic size of the imag
 All other image size operations behave the same. So, for example:
 * If no width/height are otherwise set, then the image still be the size specified by 'intrinsicsize'
 * If the width is set on the image, then it would set the height to maintain the aspect ratio defined in this property.
-* If width and height are set on the image, then this attribute’s value is ignored (however, it will still override the image's intrinsic size).
+* If width and height are set on the image, then this attribute’s value only affects the values of naturalWidth/naturalHeight, but not the rendered size of the image.
 
 The sizes are in CSS Pixels.
 
