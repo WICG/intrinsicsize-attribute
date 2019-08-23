@@ -1,3 +1,7 @@
+## Superseded
+
+This spec is no longer being worked on. Browsers and spec editors have decided to [re-purpose the `width` and `height` attributes](https://github.com/WICG/intrinsicsize-attribute/issues/16) to solve these use cases, instead.
+
 # `intrinsicsize` Attribute on Media Elements Explainer
 
 There’s no way to do media that maintains aspect ratio, is proportional to the width of the screen, and doesn’t cause a user visible reflow. If we provide a way for the author to declare the intrinsic size of the image before the image has loaded, then we could allow them to specify just one dimension (e.g. the width) to a percentage or pixel value and compute the other dimension immediately without waiting for the image to load.
