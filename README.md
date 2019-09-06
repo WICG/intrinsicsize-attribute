@@ -42,7 +42,7 @@ This attribute applies on all image element types (including SVG images) and vid
 ## Alternatives Considered
 
 ### aspectratio attribute
-`<img aspectratio="400x300" style="width: 100%">`
+`<img aspectratio="4x3" style="width: 100%">`
 
 * **Pro**: Simple to understand and implement
 * **Con**:  Doesn't work for a common use case, where you want to constrain an image to be no bigger than its container, but not stretch it to be larger. That is, you want to set the image's width to min(width of container, intrinsic width of image), and you want to do so before downloading any image data.
